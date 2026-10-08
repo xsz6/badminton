@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>羽毛球知识库</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f7f3;--ink:#14261f;--mute:#53675e;--green:#1d5a46;--line:#d5dfd8;--hi:#e9c844;--card:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1b16;--ink:#e8efe9;--mute:#9fb3a8;--green:#6fc2a0;--line:#26382f;--card:#16261f}}
+:root[data-theme="dark"]{--bg:#0f1b16;--ink:#e8efe9;--mute:#9fb3a8;--green:#6fc2a0;--line:#26382f;--card:#16261f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 "Noto Sans SC",system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+h1,h2,h3{font-family:"Noto Serif SC",Songti SC,SimSun,serif;line-height:1.35;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{max-width:1080px;margin:auto;padding:10px 20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.logo{font-family:"Noto Serif SC",serif;font-weight:700;font-size:19px;text-decoration:none;margin-right:auto}
+nav{display:flex;gap:4px 14px;flex-wrap:wrap}
+nav a{text-decoration:none;font-size:15px;color:var(--mute);padding:2px 0;border-bottom:2px solid transparent}
+nav a:hover,nav a.on{color:var(--ink);border-color:var(--hi)}
+main{max-width:1080px;margin:auto;padding:0 20px 64px}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;padding:56px 0 40px}
+.hero h1{font-size:clamp(32px,5vw,52px)}
+.hero p{color:var(--mute);max-width:30em;margin:16px 0 24px}
+.btn{display:inline-block;background:var(--green);color:var(--bg);padding:10px 22px;border-radius:4px;text-decoration:none;font-weight:500;margin-right:10px}
+.btn.o{background:none;color:var(--ink);border:1px solid var(--ink)}
+.court{width:100%;height:auto}
+.court *{vector-effect:non-scaling-stroke}
+h2.t{font-size:24px;margin:48px 0 8px}
+.sub{color:var(--mute);margin:0 0 20px}
+.idx{border-top:2px solid var(--ink)}
+.row{display:grid;grid-template-columns:170px 1fr;gap:8px 28px;padding:18px 0;border-bottom:1px solid var(--line)}
+.row h3{font-size:19px}
+.row h3 a{text-decoration:none}
+.row h3 a:hover{color:var(--green);text-decoration:underline}
+.row p{margin:0 0 6px;color:var(--mute);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14px}
+.chips a{color:var(--green)}
+.path{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.path div{border-left:4px solid var(--hi);padding:2px 0 2px 14px}
+.path b{display:block;font-family:"Noto Serif SC",serif}
+.path span{color:var(--mute);font-size:15px}
+.crumb{font-size:14px;color:var(--mute);padding:28px 0 8px}
+.crumb a{color:var(--green)}
+.art{max-width:44em}
+.art h1{font-size:clamp(28px,4vw,40px);margin-bottom:12px}
+.art h2{font-size:22px;margin:36px 0 10px}
+.art h3{font-size:18px;margin:22px 0 6px}
+.art blockquote{margin:16px 0;padding:8px 16px;border-left:4px solid var(--hi);background:var(--card)}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px;margin:12px 0}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--card)}
+.list a{display:block;padding:12px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.list a:hover{color:var(--green)}
+.list small{color:var(--mute);margin-left:8px}
+footer{border-top:1px solid var(--line);padding:28px 20px;text-align:center;color:var(--mute);font-size:14px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;gap:24px;padding-top:32px}.row{grid-template-columns:1fr}.path{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="bar"><a class="logo" href="#/">羽毛球知识库</a><nav id="nav" aria-label="主导航"></nav></div></header>
+<main id="app"></main>
+<footer>羽毛球知识库 · 为新手整理的羽毛球入门资料</footer>
+<script>
+var S=[
+["beginner","入门教学","场地、握拍、站位、发球，打第一场球前要懂的事。",[["新手必读：从零开始打羽毛球"],["羽毛球场地与基本常识"],["握拍方法","grip"],["准备姿势与基本站位"],["发球入门"],["热身与拉伸"],["新手 30 天训练计划"]]],
+["technique","技术动作","每个动作都有要领、常见错误和练习方法。",[["高远球"],["杀球"],["吊球"],["步伐"],["网前技术"],["挑球与接杀"],["平抽挡"]]],
+["gear","球拍装备","看懂参数，按水平和预算选对装备。",[["球拍结构与参数"],["如何选拍"],["球线与磅数"],["手胶与握把"],["羽毛球选购"],["球鞋"],["球包与服装"]]],
+["protection","护具","预防常见运动损伤，选对护具。",[["常见运动损伤"],["护膝"],["护踝"],["护腕与护肘"],["护腰"],["护具选购指南"]]],
+["rules","羽球规则","场地、计分、发球、犯规，看懂比赛。",[["规则总览"],["计分规则"],["发球规则"],["单打规则"],["双打规则"],["常见犯规"],["裁判手势"]]],
+["tactics","战术","从把球打过去，到有计划地得分。",[["战术基础思维"],["单打战术"],["双打站位与轮转"],["混双战术"],["比赛心态"]]],
+["venue","球馆挑选","地板、灯光、高度、价格，一份清单挑到好球馆。",[["选馆指南"],["地板类型"],["灯光与环境"],["价格与会员"],["球馆检查清单"]]],
+["myths","常见误区","避开新手最容易踩的坑。",[["装备误区"],["技术误区"],["训练误区"],["护具与健康误区"],["新手 FAQ"]]]
+];
+var GRIP='<p>握拍是所有技术的起点。握得对，发力才顺、转换才快；握错了，后面的动作都会别扭，还容易伤手腕。</p>'+
+'<h2>正手握拍</h2><p>像“和球拍握手”：</p><ol><li>拍面与地面垂直，持拍手握住拍柄。</li><li><b>虎口对准握把窄面棱边</b>。</li><li>拇指与中指自然扣住两侧，食指稍微张开。</li><li>掌心与握把之间留一点空隙，柄尾露出约 1 厘米。</li></ol><p>用于高远球、杀球、吊球、正手发球等。</p>'+
+'<h2>反手握拍</h2><ol><li>先摆好正手握拍。</li><li>用手指把拍柄向内转约 45 度。</li><li><b>拇指内侧顶住握把宽面</b>，这是反手发力的支点。</li></ol><p>用于反手高远球、挑球、放网、抽球等。</p>'+
+'<div class="tw"><table><tr><th>项目</th><th>正手</th><th>反手</th></tr><tr><td>虎口</td><td>对准窄面棱边</td><td>随拍柄内转</td></tr><tr><td>拇指</td><td>扣住握把侧面</td><td>顶在宽面</td></tr><tr><td>食指</td><td>稍张开</td><td>稍向下移</td></tr></table></div>'+
+'<h2>松与紧</h2><blockquote>平时松握，击球瞬间握紧，击球后立刻放松。</blockquote><p>握得太紧会让手腕僵硬、前臂酸痛、正反手转换变慢。</p>'+
+'<h2>常见错误</h2><div class="tw"><table><tr><th>错误</th><th>纠正</th></tr><tr><td>握锤子式，手掌包死握把</td><td>用手指握拍，掌心留空</td></tr><tr><td>握得太紧</td><td>平时放松，击球时才发力</td></tr><tr><td>虎口对着宽面</td><td>对准窄面棱边再握</td></tr><tr><td>反手拇指没顶住</td><td>拇指内侧顶宽面</td></tr><tr><td>靠另一只手转拍</td><td>练习用手指转动</td></tr></table></div>'+
+'<h2>练习</h2><ul><li>每天 5 分钟：对镜检查虎口、拇指、食指位置。</li><li>站立切换：在准备姿势下反复切换正反手，拍面不晃。</li><li>空挥拍：体会“松—紧—松”。</li></ul>';
+var app=document.getElementById('app'),nav=document.getElementById('nav');
+nav.innerHTML=S.map(function(s){return '<a href="#/'+s[0]+'" data-k="'+s[0]+'">'+s[1]+'</a>'}).join('');
+var court='<svg class="court" viewBox="-6 -6 146 73" role="img" aria-label="羽毛球双打场地示意图"><g fill="none" stroke="var(--ink)" stroke-width="1.6"><rect x="0" y="0" width="134" height="61" fill="var(--card)"/><path d="M0 4.6H134M0 56.4H134M7.6 0V61M126.4 0V61M47.2 0V61M86.8 0V61M0 30.5H47.2M86.8 30.5H134"/></g><path d="M67 -4V65" stroke="var(--hi)" stroke-width="3" stroke-dasharray="2 2"/><text x="67" y="-6.5" text-anchor="middle" font-size="5" fill="var(--mute)">球网</text><text x="23" y="19" text-anchor="middle" font-size="4.5" fill="var(--mute)">后场</text><text x="57" y="19" text-anchor="middle" font-size="4.5" fill="var(--mute)">前场</text></svg>';
+function home(){
+var rows=S.map(function(s){return '<div class="row"><h3><a href="#/'+s[0]+'">'+s[1]+'</a></h3><div><p>'+s[2]+'</p><div class="chips">'+s[3].slice(0,5).map(function(p){return '<a href="#/'+s[0]+'/'+(p[1]||'')+'">'+p[0]+'</a>'}).join('')+'</div></div></div>'}).join('');
+return '<section class="hero"><div><h1>从零开始，打好羽毛球</h1><p>为新手准备的知识库。技术、装备、规则、战术、选馆，一站查清，少走弯路。</p><a class="btn" href="#/beginner">新手入门</a><a class="btn o" href="#/beginner/grip">握拍方法</a></div>'+court+'</section>'+
+'<h2 class="t">怎么开始</h2><div class="path"><div><b>先读入门教学</b><span>了解场地、握拍和基本站位。</span></div><div><b>跟着技术教学练习</b><span>从高远球和步伐开始。</span></div><div><b>按需查阅</b><span>装备、规则、球馆随用随查。</span></div></div>'+
+'<h2 class="t">八大栏目</h2><p class="sub">点击栏目查看全部页面。</p><div class="idx">'+rows+'</div>';
+}
+function section(s){
+return '<div class="crumb"><a href="#/">首页</a> / '+s[1]+'</div><h1 style="font-size:34px">'+s[1]+'</h1><p class="sub">'+s[2]+'</p><div class="list">'+s[3].map(function(p){return '<a href="#/'+s[0]+'/'+(p[1]||'')+'">'+p[0]+(p[1]?'':'<small>即将上线</small>')+'</a>'}).join('')+'</div>';
+}
+function render(){
+var h=location.hash.replace(/^#\/?/,'').split('/'),s=S.filter(function(x){return x[0]===h[0]})[0],html;
+if(!s)html=home();
+else if(h[1]==='grip')html='<div class="crumb"><a href="#/">首页</a> / <a href="#/beginner">入门教学</a> / 握拍方法</div><article class="art"><h1>握拍方法（正手握拍/反手握拍）</h1>'+GRIP+'</article>';
+else html=section(s);
+app.innerHTML=html;
+nav.querySelectorAll('a').forEach(function(a){a.classList.toggle('on',s&&a.dataset.k===s[0])});
+document.title=(s?s[1]+' - ':'')+'羽毛球知识库';
+window.scrollTo(0,0);
+}
+window.addEventListener('hashchange',render);render();
+</script>
+</body>
+</html>
